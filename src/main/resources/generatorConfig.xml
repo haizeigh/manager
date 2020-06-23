@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.ximalaya.wxeco.common.tkmapper.GenericDao"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.60.11:3306/xmkp_advance"
+                        userId="naliworld"
+                        password="password!">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.ximalaya.xmkp.advance.server.dataBase.domain" targetProject="src/main/java"/>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <javaClientGenerator targetPackage="com.ximalaya.xmkp.advance.server.dataBase.dao" targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <!--<table tableName="xmkp_oxford_english.STUDENT_CONSECUTIVE_LEARN_DAYS" mapperName="StudentConsecutiveLearnDaysDao" domainObjectName="StudentConsecutiveLearnDays"-->
+               <!--enableCountByExample="true" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--&lt;!&ndash;mysql 配置&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--&lt;!&ndash;oracle 配置&ndash;&gt;-->
+            <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="EDU_STEP_RESULT" mapperName="EduStepResultDao" domainObjectName="EduStepResult" catalog="xmkp-advance"-->
+               <!--enableCountByExample="true" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="false"-->
+        <!--&gt;-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+
+        <!--</table>-->
+
+
+        <table tableName="SUBSCRIBE_OFFICIAL_ACCOUNT_RECORD" mapperName="SubscribeOfficialAccountRecordDao" domainObjectName="SubscribeOfficialAccountRecord" catalog="xmkp_advance"
+               enableCountByExample="true" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false"
+        >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+
+        </table>
+    </context>
+</generatorConfiguration>
